@@ -1,0 +1,25 @@
+<div class="container">
+    <ng-template #ChuaDangNhap>
+        <label class="form-login">Form Login</label>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">User name:</label>
+                <input class="form-control" #User>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password:</label>
+                <input class="form-control" #Pass>
+            </div>
+            <div class="mb-3">
+                <button (click)="DangNhap(User.value,Pass.value)" class="btn btn-primary">Login</button>
+            </div>
+            <p class="text-danger fw-bold">{{thongbao}}</p>
+        </form>
+    </ng-template>
+    <div *ngIf="status; else ChuaDangNhap">
+        <div class="text-login">
+            <p>Xin chào: {{name}}</p>
+            <button class="btn btn-danger " (click)="DangXuat()">Logout</button>
+        </div>
+    </div>
+</div>

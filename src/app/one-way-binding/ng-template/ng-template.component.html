@@ -1,0 +1,28 @@
+<div class="container">
+    <p class="fw-bold">ngIf - template</p>
+
+    <div class="row">
+        <div class="md-col-6 mr-5">
+
+            <div *ngIf="status;else noiDung">
+                Xin Chào: {{name}} <br>
+                <button (click)="DangXuat()" class="btn btn-danger">Đăng xuất </button>
+            </div>
+            <ng-template #noiDung>
+                <p> Vui lòng đăng nhập !!!</p>
+                <button (click)="DangNhap()" class="btn btn-success">Đăng nhập</button>
+            </ng-template>
+        </div>
+        <div class="md-col-6 ml-5">
+            <div *ngIf="statuss; else cu">
+                <p>Hello mày</p>
+                <button class="btn btn-secondary" (click)="DoiMau()">Bấm để đổi màu</button>
+            </div>
+            <ng-template #cu>
+                <p class="bg-primary">Mày đã đổi màu</p>
+                <button class="btn btn-info" (click)="Default()">Bấm để về trạng thái cũ</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<br>
